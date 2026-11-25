@@ -1,0 +1,48 @@
+# Pertemuan 5 - JavaScript Dasar, DOM, Event, dan Validasi Sisi Klien
+
+Mata kuliah: Pemrograman Web (Gasal 2026/2027)
+Institut Sains dan Bisnis Atma Luhur
+
+## Daftar File
+
+| File | Materi | Konsep |
+| --- | --- | --- |
+| latjavaint.html | Internal JavaScript | `console.log()`, `getElementById()`, `addEventListener("click")`, `alert()` |
+| dom.html | Manipulasi DOM | `textContent`, `innerHTML`, `style.color`, `style.backgroundColor`, `style.display`, `querySelector()` |
+| EventListener.html | Event dan Event Listener | event `click`, `input`, `change`, `this.value` |
+| CekKosong.html | Validasi input kosong | `.value`, `.trim()`, `if...else` |
+| CekPassword.html | Validasi panjang karakter | `.length < 8` |
+| CekEmail.html | Validasi format email | regex dan `.test()` |
+| ValidasiFormulir.html | Validasi formulir lengkap | `preventDefault()`, pesan error/sukses per field |
+| index.html | Halaman daftar tautan semua latihan | Tautan antar halaman |
+
+## Cara Menjalankan
+
+1. Buka file `.html` di browser (klik dua kali atau Live Server di VS Code).
+2. Tekan `F12` untuk membuka DevTools, lalu lihat tab **Console** untuk pesan `console.log()` dan galat.
+
+## Hasil Pengujian
+
+- latjavaint.html: Console menampilkan "JavaScript berhasil dijalankan!"; tombol memunculkan alert.
+- dom.html: tombol Ubah Teks, Ubah Warna, dan Sembunyikan bekerja sesuai keterangan.
+- EventListener.html: alert muncul saat klik, nama dan jurusan tampil langsung.
+- CekKosong.html: nama kosong -> "Nama wajib diisi!"; terisi -> "Nama sudah diisi!".
+- CekPassword.html: kurang dari 8 karakter -> peringatan; 8 atau lebih -> memenuhi ketentuan.
+- CekEmail.html: format salah -> "Format email tidak valid!"; benar -> "Format email valid.".
+- ValidasiFormulir.html: pesan error muncul di bawah field yang salah; jika semua benar muncul "Validasi berhasil! Data siap diproses."
+
+## Catatan Git (commit bertahap)
+
+```
+git add pertemuan-05/latjavaint.html
+git commit -m "Tambah latihan JavaScript dasar (latjavaint.html)"
+git add pertemuan-05/dom.html
+git commit -m "Tambah latihan manipulasi DOM"
+git add pertemuan-05/EventListener.html
+git commit -m "Tambah latihan event listener"
+git add pertemuan-05/CekKosong.html pertemuan-05/CekPassword.html pertemuan-05/CekEmail.html
+git commit -m "Tambah latihan validasi kosong, password, email"
+git add pertemuan-05/ValidasiFormulir.html pertemuan-05/README.md
+git commit -m "Tambah validasi formulir lengkap dan update README"
+git push origin main
+```

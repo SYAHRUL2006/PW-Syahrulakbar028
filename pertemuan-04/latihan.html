@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Belajar Flexbox & Grid - Web Studio</title>
+    
+    <!-- PANGGILAN LIBRARY BOOTSTRAP ICONS (Untuk menjamin ikon pasti muncul) -->
+    <link rel="stylesheet" href="https://jsdelivr.net">
+    
+    <style>
+        /* --- RESET & GLOBAL STYLING --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        /* --- STYLING HEADER (MENGGUNAKAN FLEXBOX) --- */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: #e2e8f0;
+        }
+
+        .container h2 {
+            text-transform: capitalize;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2563eb;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+
+        nav a:hover {
+            color: #1d4ed8;
+        }
+
+        /* --- STYLING HERO SECTION (BAGIAN UTAMA) --- */
+        main {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        main h1 {
+            text-transform: capitalize;
+            margin-bottom: 10px;
+        }
+
+        /* Mengatur foto profil agar bulat rapi */
+        .foto-profil {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid #2563eb;
+        }
+
+        /* Mengatur desain tombol Hubungi Kami */
+        .btn-hubungi {
+            background-color: #2563eb;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            margin-bottom: 50px;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-hubungi:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* --- STYLING KARTU LAYANAN (MENGGUNAKAN CSS GRID) --- */
+        .layanan-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #1e293b;
+        }
+
+        .layanan-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Desain Kotak Kartu Layanan */
+        .card {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Mengatur Ukuran & Warna Ikon Baru */
+        .card i {
+            font-size: 45px;          /* Ukuran ikon disesuaikan menggantikan gambar */
+            color: #2563eb;           /* Warna ikon disamakan dengan tema biru */
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            color: #1e293b;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        /* --- RESPONSIVE LAYOUT (MEDIA QUERIES) --- */
+        @media (min-width: 768px) {
+            .layanan-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .layanan-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Bagian Header (Flexbox) -->
+    <header class="container">
+        <h2>web studio</h2>
+        <nav>
+            <a href="#">beranda</a>
+            <a href="#">layanan</a>
+            <a href="#">tentang</a>
+            <a href="#">kontak</a>
+        </nav>
+    </header>
+
+    <!-- Konten Utama Halaman -->
+    <main>
+        <!-- Ganti baris kode foto profil yang lama dengan ini -->
+        <img src="profil.jpg" alt="Foto Profil Tim" class="foto-profil">
+
+        <!-- 2. Judul Utama & Deskripsi -->
+        <h1>selamat datang</h1>
+        <p>Belajar membuat website menggunakan CSS Flexbox dan CSS Grid.</p>
+
+        <!-- 3. Tombol Hubungi Kami -->
+        <button class="btn-hubungi">Hubungi Kami</button>
+
+        <!-- 4. Kartu Layanan menggunakan CSS Grid -->
+        <section class="layanan-section">
+            <h2>Layanan Kami</h2>
+            <div class="layanan-container">
+                
+                <!-- Kartu Layanan 1 (Ikon Desain Grafis) -->
+                <div class="card">
+                    <i class="bi bi-palette-fill"></i>
+                    <h3>Web Design</h3>
+                    <p>Membuat tampilan website yang menarik, modern, dan mudah digunakan oleh pengunjung.</p>
+                </div>
+
+                <!-- Kartu Layanan 2 (Ikon Coding/Komputer) -->
+                <div class="card">
+                    <i class="bi bi-code-slash"></i>
+                    <h3>Web Development</h3>
+                    <p>Membangun sistem website yang cepat diakses, aman, dan menggunakan teknologi terbaru.</p>
+                </div>
+
+                <!-- Kartu Layanan 3 (Ikon Layar Ponsel & Device) -->
+                <div class="card">
+                    <i class="bi bi-phone-vibrate"></i>
+                    <h3>Responsive Design</h3>
+                    <p>Memastikan website tampil rapi saat dibuka di HP, tablet, maupun layar laptop Anda.</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
